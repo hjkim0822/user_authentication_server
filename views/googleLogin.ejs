@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    </head>
+    <body>
+
+        <script>
+            function handleCredentialResponse(response) {
+                console.log("Encoded JWT ID token: " + response.credential);
+                // let xhr = new XMLHttpRequest();
+                // xhr.open('post', 'https://localhost:3000/auth/login', true);
+                // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+                // xhr.send();
+            }
+            window.onload = function () {
+              google.accounts.id.initialize({
+                client_id: "547232769769-aluet0krlq1ruohnplms1cti67q7alvs.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+              });
+              google.accounts.id.renderButton(
+                document.getElementById("buttonDiv"),
+                { theme: "outline", size: "large" }  // customization attributes
+              );
+              google.accounts.id.prompt(); // also display the One Tap dialog
+            }
+        </script>
+        <div id="buttonDiv"></div> 
+    </body>
+</html>
