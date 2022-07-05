@@ -1,6 +1,6 @@
 import express from "express";
 import jwt from '../lib/jwt.js'
-import { blacklistToken, isBlacklisted } from '../lib/redis.js';
+import redis from '../lib/redis.js';
 import userController from "../controller/user.controller.js";
 
 const router = express.Router();
@@ -35,7 +35,7 @@ router.post('/refresh', (req, res) => {
 
     const {iat, exp, ...decoded} = jwt.verifyRefreshToken(refreshToken);
 
-    if (isBlacklisted(refreshToken)) {
+    if (redis.isBlacklisted(refreshToken)) {
         res.status(401).json({message: "Invalid Refresh Token"});
     }
 
@@ -49,7 +49,7 @@ router.get('/logout', (req, res) => {
 
     const {iat, exp, ...decoded} = jwt.verifyRefreshToken(refreshToken);
     
-    blacklistToken( refreshToken, exp );
+    redis.blacklistToken( refreshToken, exp );
 
     res.json({message: "blacklisted refreshtoken"});
 })

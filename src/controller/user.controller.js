@@ -6,13 +6,15 @@ const verifyIdToken = async (platform, idToken) => {
     // TODO: verify idToken with googleOAuth
     if (platform == 'google') {
         try {
-            const email = verifyGoogle(idToken);
-
+            const email = await verifyGoogle(idToken);
+            
             const user = await models.User.findOne({
                 where: {
                     email
                 }
             })
+
+            console.log(user);
     
             if (user) return {status: true, message: 'login success!', user};
             else return {status: false, message: 'register first', email};
