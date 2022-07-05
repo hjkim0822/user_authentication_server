@@ -1,0 +1,32 @@
+APP_PORT=3000
+
+##### JWT SECRET #####
+ACCESS_SECRET="HhwiU36Fz/ITS89Zg2ix3+xUj7sFZK++ttIhDW89pEopxMIKKPqBwmt78jVsbZrBkI5qDIcylyAz9L0+rLW0S9AQ6wBsQB1t7vNB68WXF96PsnCYkwWv+h7UE7hqq7NOo7VejQCY83zbsaehGCnmIu7ke5UeiryPHyLGB/WEJ8Xt8EAGkVVvEASdtw/77Sq4+XioM0WjmoBYDIAAB0GfrKEKD9IogAyazHU2zR4VlV2o8HoUEyCI0g7DToFWrVzcJYD7xpt4T9WH8yIeISeS87aYOnuclAYDBrUyrXznGKcsvmMp2nteIuTXC0Gn+OFXVvCd3Iyyx+7v49uhmjsnTw=="
+REFRESH_SECRET="3e2W+B3PCxEPZH8N0PlZilB1LAz83bj99FgnMGsH9eVTCkJ29wXK0LkHlL6nCAtlFG9wIxaYVoPnS6i2SBPrrHr09slzaeQ1WPDO2SqfEjKlzEChmMaATokByWQtca7kCqAH+il/YY8AMm350dzKvGbkycb9o2SniyFdSOVJo3xsTkl/gqVLaFf8RN9dM8MDaEwGg3XBT+VAARXIrWc4b7CR9uUwGiORfwWI+bUzUsaa7OmVRF0M6r2UsLvmISqQrSfa3mPC4azqpVfhyJX0QSYwj9mRNGyEZUDKRf1bXo5nJ+JBCu7jf8fsHsJhZk7am1t1t4YrHkiCnU3WrMz0zQ=="
+
+##### 간편로그인 #####
+GOOGLE_CLIENT_ID=547232769769-aluet0krlq1ruohnplms1cti67q7alvs.apps.googleusercontent.com
+
+##### NODE ENVIRONMENT { development, test, production } #####
+NODE_ENV=development
+
+##### NODE_ENV: development #####
+DEV_USERNAME=postgres
+DEV_PASSWORD=password
+DEV_DB=user_authentication_server_db
+DEV_HOST=localhost
+DEV_PORT=5432
+
+##### NODE_ENV: test #####
+TEST_USERNAME=
+TEST_PASSWORD=
+TEST_DB=
+TEST_HOST=
+TEST_PORT=
+
+##### NODE_ENV: production #####
+PROD_USERNAME=
+PROD_PASSWORD=
+PROD_DB=
+PROD_HOST=
+PROD_PORT=
